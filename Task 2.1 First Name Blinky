@@ -1,0 +1,52 @@
+int led = D6;
+int dash_time = 500;
+int dot_time = 250;
+int wait_time = 500;
+
+
+void setup() {
+    pinMode(D6, OUTPUT);
+}
+
+void dash(){
+    digitalWrite(led,HIGH);
+    delay(dash_time);
+    digitalWrite(led, LOW);
+    delay(wait_time);
+}
+
+void dot(){
+    digitalWrite(led,HIGH);
+    delay(dot_time);
+    digitalWrite(led, LOW);
+    delay(wait_time);
+}
+
+void blinkG(){
+    dash();
+    dash();
+    dot();
+}
+
+void blinkA(){
+    dot();
+    dash();
+}
+void blinkN(){
+    dash();
+    dot();
+}
+
+void loop() {
+
+blinkG();
+delay(500);
+blinkA();
+delay(500);
+blinkG();
+delay(500);
+blinkA();
+delay(500);
+blinkN();
+delay(1000);
+}
